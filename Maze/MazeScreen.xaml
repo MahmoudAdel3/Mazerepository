@@ -1,0 +1,68 @@
+﻿<Window x:Class="Maze.MazeScreen"
+        x:Name="GridWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Maze"
+        mc:Ignorable="d"
+        Background="#e8ecef" 
+        Icon="res/icons/logo.png"
+        ResizeMode="CanMinimize"
+        Closing="MazeScreen_Closeing"
+        WindowStartupLocation="CenterScreen" 
+        Title="Maze" Height="600" Width="1000">
+    <StackPanel Height="auto" Width="auto" Orientation="Horizontal">
+
+        <!--sidebar -->
+        <StackPanel        
+            Height="570" Width="200" Background="#242e42">
+            <Button x:Name="SolveMaze"
+                    Height="40" Width="150" FontSize="15" FontWeight="Normal" Foreground="#fff" Background="#4da3f6"
+                    Margin="10,60,10,10" BorderThickness="0" Click="solveMaze" >
+                <DockPanel Width="300">
+                    <Image DockPanel.Dock="Left" Width="15" Height="15" Source="res/icons/start.png" Margin="10,5,20,0" ></Image>
+                    <TextBlock>Solve Maze</TextBlock>
+                </DockPanel>
+            </Button>
+
+            <Button x:Name="MainMenuBtn"
+                    Height="40" Width="150" FontSize="15" FontWeight="Normal" Foreground="#fff" Background="#4da3f6"
+                    Margin="10,10,10,10" BorderThickness="0" Click="goToMain" >
+                <DockPanel Width="150">
+                    <Image DockPanel.Dock="Left" Width="15" Height="15" Source="res/icons/back_white.png" Margin="10,5,20,0" ></Image>
+                    <TextBlock>Main Menu</TextBlock>
+                </DockPanel>
+            </Button>
+            <StackPanel x:Name="TimerPanel" Visibility="Collapsed">
+            <TextBlock
+                Text="Timer" FontSize="24" FontWeight="Bold" TextAlignment="Center" Foreground="#fff"  Margin="0,20,0,0">
+            </TextBlock>
+                <TextBlock x:Name="TimerTextBlock"
+                Text="00 : 00" FontSize="20" FontWeight="Normal" TextAlignment="Center" Foreground="#fff"  Margin="0,10,0,0">
+            </TextBlock>
+            </StackPanel>
+
+            <Image 
+                Source="res/icons/logo.png" Height="100" Margin="0,120,0,0" >
+            </Image>
+            <TextBlock
+                Text="Maze" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#fff"  Margin="0,20,0,0">
+            </TextBlock>
+        </StackPanel>
+
+        <!-- maze -->
+        <StackPanel Height="auto" Width="800">
+   
+            <TextBlock  Foreground="#647d93" FontSize="24" FontWeight="Medium" Margin="20">Maze</TextBlock>
+
+            <Grid x:Name="MazeGrid" Margin="40" Height="400" Width="auto">
+ 
+            </Grid>
+            
+            
+
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
